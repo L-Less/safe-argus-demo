@@ -1,0 +1,31 @@
+# Node.js 相关
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE 相关
+.idea/
+*.iml
+
+# 环境变量和敏感信息
+# .env
+# .env.local
+# .env.development
+# .env.test
+# .env.production
+
+# 编译输出（例如 Hardhat 或 Foundry）
+artifacts/
+cache/
+out/
+
+# 测试网临时文件
+coverage/
+coverage.json
+
+# 其他
+.DS_Store
+dist/
+build/
+# package.json
+# package-lock.json
