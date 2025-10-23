@@ -5,17 +5,23 @@
   "scripts": {
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js --network sepolia",
-    "bot": "node bot/bot.js"
+    "bot": "node bot/bot.js",
+    "test": "mocha bot/autoBot.test.js --timeout 60000",
+    "test:watch": "mocha bot/autoBot.test.js --timeout 60000 --watch"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
-    "hardhat": "^2.26.3"
+    "chai": "^4.5.0",
+    "hardhat": "^2.26.3",
+    "mocha": "^11.7.4"
   },
   "dependencies": {
     "@safe-global/protocol-kit": "^6.1.1",
+    "@safe-global/safe-core-sdk": "^3.3.5",
     "@safe-global/safe-core-sdk-types": "^5.1.0",
     "@safe-global/safe-ethers-lib": "^1.9.4",
-    "dotenv": "^16.3.1",
+    "axios": "^1.12.2",
+    "dotenv": "^16.6.1",
     "ethers": "^6.15.0"
   },
   "description": "## 安装依赖 ``` npm install ```",
