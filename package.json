@@ -6,6 +6,7 @@
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js --network sepolia",
     "bot": "node bot/bot.js",
+    "multisig-bot": "node bot/multisig-bot.js",
     "test": "mocha bot/autoBot.test.js --timeout 60000",
     "test:watch": "mocha bot/autoBot.test.js --timeout 60000 --watch"
   },
@@ -16,6 +17,7 @@
     "mocha": "^11.7.4"
   },
   "dependencies": {
+    "@safe-global/api-kit": "^4.0.0",
     "@safe-global/protocol-kit": "^6.1.1",
     "@safe-global/safe-core-sdk": "^3.3.5",
     "@safe-global/safe-core-sdk-types": "^5.1.0",
