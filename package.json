@@ -6,8 +6,11 @@
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js --network sepolia",
     "bot": "node bot/bot.js",
+    "abot": "node bot/abot.js",
     "multisig-bot": "node bot/multisig-bot.js",
     "test": "mocha bot/autoBot.test.js --timeout 60000",
+    "test:abot": "mocha bot/abot.test.js --timeout 90000",
+    "test:all": "mocha bot/*.test.js --timeout 90000",
     "test:watch": "mocha bot/autoBot.test.js --timeout 60000 --watch"
   },
   "devDependencies": {
