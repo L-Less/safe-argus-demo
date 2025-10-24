@@ -466,28 +466,6 @@ export async function executeSafeTransactionFlow(config) {
             if (altError.response) {
                 console.log('🔍 备选方案错误详情:', JSON.stringify(altError.response.data, null, 2));
             }
-
-            // 尝试使用 Safe API Kit 作为最后的备选方案
-            console.log('\n🔄 尝试使用 Safe API Kit...');
-            try {
-                const SafeApiKit = (await import('@safe-global/api-kit')).default;
-
-
-                const apiKitResponse = await service.proposeTransaction({
-                    safeAddress: safeAddress,
-                    safeTransactionData: safeTransaction.data,
-                    safeTxHash: safeTxHash,
-                    senderAddress: ethers.getAddress(ownerSender),
-                    senderSignature: signedTx.encodedSignatures()
-                });
-
-                console.log('✅ Safe API Kit 成功!');
-                console.log('📋 API Kit 响应:', apiKitResponse);
-
-            } catch (apiKitError) {
-                console.error('❌ Safe API Kit 也失败:', apiKitError.message);
-                console.log('💡 建议手动在 Safe Web 界面创建交易');
-            }
         }
     }
 
